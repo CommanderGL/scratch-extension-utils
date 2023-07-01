@@ -1,9 +1,8 @@
 {
   "name": "scratch-extension-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A set of types, functions, and more designed to help aid someone creating a complex Scratch extension!",
   "main": "dist/index.js",
-  "type": "module",
   "types": "./types/",
   "scripts": {
     "watch": "tsc --watch",
