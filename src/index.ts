@@ -1,3 +1,5 @@
+import VM from 'scratch-vm';
+
 export type ScratchBlockArgument = {
     type: "string" | "number" | "angle" | "Boolean" | "color" | "matrix" | "note" | "image",
     defaultValue?: string | number
@@ -44,20 +46,23 @@ export interface ScratchExtension {
     getInfo(): ScratchExtensionInfo;
 }
 
+interface ModdedExtensionManager extends VM.ExtensionManager {
+    _registerInternalExtension(instance: ScratchExtension): string;
+    _loadedExtensions: Map<string, string>;
+}
+
+interface ModdedVM extends VM {
+    extensionManager: ModdedExtensionManager;
+}
+
 declare global {
     interface Window {
-        vm: {
-            extensionManager: {
-                runtime: any,
-                _registerInternalExtension: (extension: ScratchExtension) => string,
-                _loadedExtensions: Map<string, string>
-            }
-        }
+        vm: ModdedVM
     }
 }
 
 export const loadUnsandboxedExtension = (extensionClass: any) => {
-    const instance = new extensionClass(window.vm.extensionManager.runtime);
+    const instance = <ScratchExtension>(new extensionClass(window.vm.extensionManager.runtime));
     const service = window.vm.extensionManager._registerInternalExtension(instance);
     window.vm.extensionManager._loadedExtensions.set(instance.getInfo().id, service);
 }

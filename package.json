@@ -21,5 +21,9 @@
   "license": "CC BY-NC-SA",
   "devDependencies": {
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@turbowarp/types": "^0.0.9",
+    "scratch-vm": "^1.5.91"
   }
 }
