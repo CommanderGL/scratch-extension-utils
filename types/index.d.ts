@@ -44,9 +44,10 @@ export type ScratchExtensionInfo = {
     };
 };
 export interface ScratchExtension {
-    runtime?: any;
+    runtime?: VM.Runtime;
     getInfo(): ScratchExtensionInfo;
 }
+export type Runtime = VM.Runtime;
 interface ModdedExtensionManager extends VM.ExtensionManager {
     _registerInternalExtension(instance: ScratchExtension): string;
     _loadedExtensions: Map<string, string>;
