@@ -42,7 +42,7 @@ export type ScratchExtensionInfo = {
 }
 
 export interface ScratchExtension {
-    runtime?: any;
+    runtime?: VM.Runtime;
     getInfo(): ScratchExtensionInfo;
 }
 

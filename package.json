@@ -1,6 +1,6 @@
 {
   "name": "scratch-extension-utils",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A set of types, functions, and more designed to help aid someone creating a complex Scratch extension!",
   "main": "dist/index.js",
   "types": "./types/",
