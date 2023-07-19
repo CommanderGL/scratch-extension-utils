@@ -16,7 +16,12 @@ export type ScratchBlock = {
     branchCount?: number,
     blockAllThreads?: boolean,
     terminal?: boolean,
-    func?: string
+    func?: string,
+    disableMonitor?: boolean,
+    hideFromPalette?: boolean,
+    reporterScope?: string,
+    isEdgeActivated?: boolean,
+    shouldRestartExistingThreads?: boolean
 }
 
 export type ScratchMenuItem = {
@@ -37,7 +42,6 @@ export type ScratchExtensionInfo = {
     blocks?: ScratchBlock[],
     color1?: string
     color2?: string,
-    color3?: string,
     docsURI?: string,
     menus?: {[key: string]: ScratchMenu},
     translation_map?: {[key: string]: {[key: string]: string}}
