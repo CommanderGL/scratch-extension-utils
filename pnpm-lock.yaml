@@ -8,11 +8,17 @@ dependencies:
   '@turbowarp/types':
     specifier: ^0.0.9
     version: 0.0.9
+  arrive:
+    specifier: ^2.4.1
+    version: 2.4.1
   scratch-vm:
     specifier: ^1.5.91
     version: 1.5.91(scratch-svg-renderer@0.2.0-prerelease.20230710144521)(webpack@4.46.0)
 
 devDependencies:
+  '@types/arrive':
+    specifier: ^2.4.1
+    version: 2.4.1
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
@@ -22,6 +28,10 @@ packages:
   /@turbowarp/types@0.0.9:
     resolution: {integrity: sha512-acplIgp7HmAhwLOJN0XaWcDqrUP9fvsE+dDR3eSKtn8VA8V4X5T3ze2VIQXyDi3qtaJ/HfiR9oS2/Cr+qh6nOw==}
     dev: false
+
+  /@types/arrive@2.4.1:
+    resolution: {integrity: sha512-T4fPI0e3XOCFgS4YDpKf230IVlgMKEk/sGW2yl7UExuIsH0V0FshNjrbVZOogjUaRINsnFJzoJpsTmJ2xoJxFQ==}
+    dev: true
 
   /@vernier/godirect@1.5.0:
     resolution: {integrity: sha512-vMS0fQubI3WSSLg1Ry3aey/qWCl9XoCsFzgwOWYkeJs45YxjPel+42pLh5pO7uP6oF47sjZUKx8kGOoTiiiirA==}
@@ -255,6 +265,10 @@ packages:
     engines: {node: '>= 4.0.0'}
     dependencies:
       loader-utils: 1.4.2
+    dev: false
+
+  /arrive@2.4.1:
+    resolution: {integrity: sha512-gnpcKdKN4HJAmzpZIxDBJsw/z59sBvh9i4mJyHJCk+enrKnEZ/l1GspM1MGPxMxnRcdt+v/OIWEY5mNQSGisPQ==}
     dev: false
 
   /asn1.js@5.4.1:

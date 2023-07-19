@@ -1,3 +1,4 @@
+import 'arrive';
 import VM from 'scratch-vm';
 
 export type ScratchBlockArgument = {
@@ -41,9 +42,24 @@ export type ScratchExtensionInfo = {
     translation_map?: {[key: string]: {[key: string]: string}}
 }
 
-export interface ScratchExtension {
+interface ScratchExtensionImpl {
     runtime?: VM.Runtime;
     getInfo(): ScratchExtensionInfo;
+    removeFromSidebar(): void;
+}
+
+export class ScratchExtension implements ScratchExtensionImpl {
+    getInfo(): ScratchExtensionInfo {
+        return {
+            id: "MustSpecifyGetInfo"
+        }
+    }
+
+    removeFromSidebar(): void {
+        document.arrive(`.scratchCategoryId-${this.getInfo().id}`, elem => {
+            elem.parentElement?.remove();
+        });
+    }
 }
 
 export type Runtime = VM.Runtime;

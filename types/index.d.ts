@@ -1,3 +1,4 @@
+import 'arrive';
 import VM from 'scratch-vm';
 export type ScratchBlockArgument = {
     type: "string" | "number" | "angle" | "Boolean" | "color" | "matrix" | "note" | "image";
@@ -43,9 +44,14 @@ export type ScratchExtensionInfo = {
         };
     };
 };
-export interface ScratchExtension {
+interface ScratchExtensionImpl {
     runtime?: VM.Runtime;
     getInfo(): ScratchExtensionInfo;
+    removeFromSidebar(): void;
+}
+export declare class ScratchExtension implements ScratchExtensionImpl {
+    getInfo(): ScratchExtensionInfo;
+    removeFromSidebar(): void;
 }
 export type Runtime = VM.Runtime;
 interface ModdedExtensionManager extends VM.ExtensionManager {
