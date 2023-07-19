@@ -3,6 +3,7 @@ import VM from 'scratch-vm';
 export type ScratchBlockArgument = {
     type: "string" | "number" | "angle" | "Boolean" | "color" | "matrix" | "note" | "image";
     defaultValue?: string | number;
+    menu?: string;
 };
 export type ScratchBlock = {
     opcode: string;
